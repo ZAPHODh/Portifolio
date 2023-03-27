@@ -7,6 +7,7 @@ export type ButtonProps = {
   borderColor?: string;
   fontSize?: string;
   center?: boolean;
+  reverse?: boolean;
 };
 
 export const Button = ({
@@ -17,6 +18,7 @@ export const Button = ({
   borderColor = 'white',
   fontSize = 'inherit',
   center = true,
+  reverse = false,
 }: ButtonProps) => {
   return (
     <Styled.Wrapper
@@ -26,6 +28,7 @@ export const Button = ({
       borderColor={borderColor}
       fontSize={fontSize}
       center={center}
+      reverse={reverse}
     >
       {children}
     </Styled.Wrapper>

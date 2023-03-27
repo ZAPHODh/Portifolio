@@ -5,9 +5,10 @@ type Button = {
   borderColor: string;
   fontSize: string;
   center: boolean;
+  reverse: boolean;
 };
 export const Wrapper = styled.button<Button>`
-    ${({ rounded, width, borderColor, fontSize, center }) => css`
+    ${({ rounded, width, borderColor, fontSize, center, reverse }) => css`
         margin: 5px;
         width: ${width};
         padding: 10px;
@@ -16,9 +17,9 @@ export const Wrapper = styled.button<Button>`
         font-size: ${fontSize};
         justify-content: ${center ? 'center' : 'space-between'};
         border-radius: ${!rounded ? '10px' : '50%'};
-        color: #8c8c8c;
+        color: ${reverse ? 'black' : 'white'};
         transition: all 0.2s;
-        background-color: transparent;
+        background-color: ${reverse ? 'white' : 'transparent'};
         border: 1px solid #8c8c8c;
         &:hover {
             cursor: pointer;

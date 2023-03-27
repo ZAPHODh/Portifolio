@@ -1,7 +1,7 @@
 import { MenuLink } from '../MenuLink';
 import * as Styled from './styles';
 import { v4 as uuidv4 } from 'uuid';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { Button } from '../Button';
 import { useRouter } from 'next/navigation';
 import { Heading } from '../Heading';
@@ -11,6 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 export type menuLink = {
   name: string;
   to: string;
+  target?: '_self' | '_blank';
 };
 export type MenuProps = {
   menuLink?: menuLink[];
@@ -18,10 +19,12 @@ export type MenuProps = {
 
 export const Menu = ({
   menuLink = [
-    { name: 'story', to: '#Perfil' },
-    { name: 'story', to: '#Projects' },
-    { name: 'story', to: '#' },
-    { name: 'story', to: '#' },
+    { name: 'Github', to: 'https://github.com/ZAPHODh', target: '_blank' },
+    {
+      name: 'LinkedIn',
+      to: 'https://www.linkedin.com/in/zaphodh/',
+      target: '_blank',
+    },
   ],
 }: MenuProps) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -59,7 +62,19 @@ export const Menu = ({
       <Heading as="h2">ZAPHODh</Heading>
       <Styled.ContainerSmallWindow>
         {session ? (
-          <Button onClick={handleClickGames}>Jogos</Button>
+          <>
+            <Button onClick={handleClickGames} reverse={true}>
+              Jogos
+            </Button>
+
+            <Button
+              onClick={() => {
+                signOut();
+              }}
+            >
+              Deslogar
+            </Button>
+          </>
         ) : (
           <Button
             onClick={() => {
@@ -75,6 +90,7 @@ export const Menu = ({
         </Styled.Hamburguer>
 
         <Styled.MenuNav clicked={openMenu}>
+          <Styled.Divisor />
           <Styled.CloseMenuSmallWindow onClick={handleCloseMenuNav}>
             <CloseIcon fontSize="inherit" />
           </Styled.CloseMenuSmallWindow>
@@ -84,6 +100,7 @@ export const Menu = ({
                 href={link.to}
                 key={uuidv4()}
                 onClick={handleClickMenuLink}
+                target={link.target && link.target}
               >
                 {link.name}
               </MenuLink>

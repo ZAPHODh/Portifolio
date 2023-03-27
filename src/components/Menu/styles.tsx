@@ -87,3 +87,9 @@ export const CloseMenuSmallWindow = styled.button`
         color: white;
     }
 `;
+
+export const Divisor = styled.div`
+   border: 1px solid #8b8b8b;
+   height: 20px;
+   margin: 5px;
+`;
