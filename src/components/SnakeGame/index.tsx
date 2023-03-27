@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { Button } from '../Button';
 import { GameOver } from '../GameOver';
 import * as Styled from './styles';
+import { ArrowUp } from '@styled-icons/bootstrap/ArrowUp';
+import { ArrowDown } from '@styled-icons/bootstrap/ArrowDown';
+import { ArrowLeft } from '@styled-icons/bootstrap/ArrowLeft';
+import { ArrowRight } from '@styled-icons/bootstrap/ArrowRight';
 type Position = {
   x: number;
   y: number;
@@ -148,13 +153,66 @@ export const SnakeGame = () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
+  const handleButtonLeftClick = () => {
+    setDirection((prevDirection) => {
+      if (prevDirection !== 'RIGHT') {
+        return 'LEFT';
+      }
+      return prevDirection;
+    });
+  };
+
+  const handleButtonUpClick = () => {
+    setDirection((prevDirection) => {
+      if (prevDirection !== 'DOWN') {
+        return 'UP';
+      }
+      return prevDirection;
+    });
+  };
+
+  const handleButtonRightClick = () => {
+    setDirection((prevDirection) => {
+      if (prevDirection !== 'LEFT') {
+        return 'RIGHT';
+      }
+      return prevDirection;
+    });
+  };
+
+  const handleButtonDownClick = () => {
+    setDirection((prevDirection) => {
+      if (prevDirection !== 'UP') {
+        return 'DOWN';
+      }
+      return prevDirection;
+    });
+  };
 
   return (
     <Styled.Wrapper>
       {gameOver ? (
         <GameOver score={score}></GameOver>
       ) : (
-        <Styled.GameCanvas ref={canvasRef} />
+        <>
+          <Styled.GameCanvas ref={canvasRef} />
+          <Styled.Controls>
+            <Button onClick={handleButtonUpClick}>
+              <ArrowUp />
+            </Button>
+          </Styled.Controls>
+          <Styled.Controls>
+            <Button onClick={handleButtonLeftClick}>
+              <ArrowLeft />
+            </Button>
+            <Button onClick={handleButtonDownClick}>
+              <ArrowDown />
+            </Button>
+            <Button onClick={handleButtonRightClick}>
+              <ArrowRight />
+            </Button>
+          </Styled.Controls>
+        </>
       )}
     </Styled.Wrapper>
   );
