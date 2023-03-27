@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "export":"next export",
+    "deploy static":"npm run build & npm run export"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
