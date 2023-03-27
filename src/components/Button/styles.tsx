@@ -27,5 +27,11 @@ export const Wrapper = styled.button<Button>`
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
         }
+        &:disabled{
+            cursor:no-drop ;
+            &:hover{
+                background-color: transparent;
+            }
+        }
     `}
 `;
