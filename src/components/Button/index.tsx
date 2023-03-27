@@ -1,33 +1,33 @@
 import * as Styled from './styles';
 export type ButtonProps = {
-    children: string | React.ReactNode;
-    onClick: React.MouseEventHandler<HTMLButtonElement>;
-    rounded?: boolean;
-    width?: number | string;
-    borderColor?: string;
-    fontSize?: string;
-    center?: boolean;
+  children: string | React.ReactNode;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  rounded?: boolean;
+  width?: number | string;
+  borderColor?: string;
+  fontSize?: string;
+  center?: boolean;
 };
 
 export const Button = ({
-    children,
-    onClick,
-    rounded = false,
-    width = '90%',
-    borderColor = 'white',
-    fontSize = 'inherit',
-    center = true,
+  children,
+  onClick,
+  rounded = false,
+  width = '90%',
+  borderColor = 'white',
+  fontSize = 'inherit',
+  center = true,
 }: ButtonProps) => {
-    return (
-        <Styled.Wrapper
-            onClick={onClick}
-            rounded={rounded}
-            width={width}
-            borderColor={borderColor}
-            fontSize={fontSize}
-            center={center}
-        >
-            {children}
-        </Styled.Wrapper>
-    );
+  return (
+    <Styled.Wrapper
+      onClick={onClick}
+      rounded={rounded}
+      width={width}
+      borderColor={borderColor}
+      fontSize={fontSize}
+      center={center}
+    >
+      {children}
+    </Styled.Wrapper>
+  );
 };

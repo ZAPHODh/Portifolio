@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 type Button = {
-    rounded: boolean;
-    width: number | string;
-    borderColor: string;
-    fontSize: string;
-    center: boolean;
+  rounded: boolean;
+  width: number | string;
+  borderColor: string;
+  fontSize: string;
+  center: boolean;
 };
 export const Wrapper = styled.button<Button>`
     ${({ rounded, width, borderColor, fontSize, center }) => css`

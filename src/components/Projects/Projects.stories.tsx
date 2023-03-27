@@ -2,8 +2,8 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Projects, ProjectsProps } from '.';
 
 export default {
-    title: 'Projects',
-    component: Projects,
+  title: 'Projects',
+  component: Projects,
 } as Meta<ProjectsProps>;
 
 const Template: StoryFn<typeof Projects> = (args) => <Projects {...args} />;

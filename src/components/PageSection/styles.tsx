@@ -129,17 +129,19 @@ export const TextContainer = styled.div<{ progress: number; index: number }>`
             width: 100%;
             @media (min-width: 728px) {
                 ${
-                    index % 2 === 0
-                        ? 'margin-left: 550px;'
-                        : 'margin-right: 550px;'
+                  index % 2 === 0
+                    ? 'margin-left: 550px;'
+                    : 'margin-right: 550px;'
                 };
                 transition: all 0.5s;
                 ${() => {
-                    if (progress > 0.3 && progress < 0.7)
-                        return css`
-                            ${index % 2 === 0
+                  if (progress > 0.3 && progress < 0.7)
+                    return css`
+                            ${
+                              index % 2 === 0
                                 ? 'margin-left: 0;'
-                                : 'margin-right: 0;'};
+                                : 'margin-right: 0;'
+                            };
                         `;
                 }};
             }
@@ -149,17 +151,17 @@ export const TextContainer = styled.div<{ progress: number; index: number }>`
                 opacity:0%
                 transition: all 2s ease-in;
                 ${() => {
-                    if (progress > 0.3 && progress < 0.7)
-                        return css`
+                  if (progress > 0.3 && progress < 0.7)
+                    return css`
                             animation: ${Visible} 1.5s ease-in;
                             animation-iteration-count: 1;
                             opacity: 100%;
                         `;
-                    else {
-                        return css`
+                  else {
+                    return css`
                             opacity: 0%;
                         `;
-                    }
+                  }
                 }};
             }
         }
@@ -188,16 +190,16 @@ export const ImgContainer = styled.div<{ progress: number }>`
         /* width: 100%; */
         @media (min-width: 728px) {
             ${() => {
-                if (progress < 0.3 || progress > 0.7)
-                    return css`
+              if (progress < 0.3 || progress > 0.7)
+                return css`
                         animation: ${Invisible} 0.5s linear;
                         animation-iteration-count: 1;
                         opacity: 0;
                     `;
             }};
             ${() => {
-                if (progress > 0.3 && progress < 0.7)
-                    return css`
+              if (progress > 0.3 && progress < 0.7)
+                return css`
                         animation: ${Shake} 0.5s linear;
                         animation-iteration-count: 1;
                     `;

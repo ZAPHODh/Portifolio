@@ -2,17 +2,17 @@ import { Button } from '../Button';
 import * as Styled from './styles';
 
 export type GameOverProps = {
-    score: number;
+  score: number;
 };
 
 export const GameOver = ({ score }: GameOverProps) => {
-    return (
-        <Styled.Wrapper>
-            <p>Game Over</p>
-            <p>Sua pontuação foi de {score}</p>
-            <Button onClick={() => window.location.reload()} rounded={false}>
-                Jogar novamente!
-            </Button>
-        </Styled.Wrapper>
-    );
+  return (
+    <Styled.Wrapper>
+      <p>Game Over</p>
+      <p>Sua pontuação foi de {score}</p>
+      <Button onClick={() => window.location.reload()} rounded={false}>
+        Jogar novamente!
+      </Button>
+    </Styled.Wrapper>
+  );
 };
