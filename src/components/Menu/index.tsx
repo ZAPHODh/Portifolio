@@ -57,9 +57,14 @@ export const Menu = ({
   const handleCloseMenuNav = () => {
     setOpenMenu(false);
   };
+  const handleLogoClick = () => {
+    router.push('/');
+  };
   return (
     <Styled.Wrapper isFixed={isFixed}>
-      <Heading as="h2">ZAPHODh</Heading>
+      <Heading as="h2" isButton={true} onClick={handleLogoClick}>
+        ZAPHODh
+      </Heading>
       <Styled.ContainerSmallWindow>
         {session ? (
           <>

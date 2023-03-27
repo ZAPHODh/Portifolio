@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Title = styled.h1`
-    &:hover {
-        cursor: default;
+export const Title = styled.h1<{ isButton: boolean }>`
+   ${({ isButton }) => css`
+   &:hover {
+        cursor: ${isButton ? 'pointer' : 'default'};
     }
+   `}
 `;
