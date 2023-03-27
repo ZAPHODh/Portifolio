@@ -17,24 +17,6 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Arial, Helvetica, sans-serif;
     background-color: #1C1C1C;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: ${({ theme }) => theme.spacings.large} 0;
-  }
-
-  p {
-    margin: ${({ theme }) => theme.spacings.medium} 0;
-  }
-
-  ul, ol {
-    margin: ${({ theme }) => theme.spacings.medium};
-    padding: ${({ theme }) => theme.spacings.medium};
-  }
-
-  a {
-    color: ${({ theme }) => theme.colors.secondaryColor};
-  }
-
   .table {
     width: 100%;
     overflow-y: auto;

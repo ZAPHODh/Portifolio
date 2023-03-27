@@ -1,12 +1,17 @@
-import { AppThemeProvider } from '@/context/ThemeContext';
 import { GlobalStyles } from '@/styles/golbal-styles';
+import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
-
-export default function App({ Component, pageProps }: AppProps) {
+import { ParallaxProvider } from 'react-scroll-parallax';
+export default function App({
+    Component,
+    pageProps: { session, ...pageProps },
+}: AppProps) {
     return (
-        <AppThemeProvider>
-            <Component {...pageProps} />
-            <GlobalStyles />
-        </AppThemeProvider>
+        <SessionProvider session={session}>
+            <ParallaxProvider>
+                <GlobalStyles />
+                <Component {...pageProps} />
+            </ParallaxProvider>
+        </SessionProvider>
     );
 }
