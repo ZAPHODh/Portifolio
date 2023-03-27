@@ -3,7 +3,7 @@ import { Heading } from '../../components/Heading';
 import { Menu } from '../../components/Menu';
 import { PageSection } from '../../components/PageSection';
 import * as Styled from './styles';
-import Banner from '../../../public/assets/images/projectBanner.webp';
+
 import { v4 as uuid } from 'uuid';
 
 export type ProjectProps = {
