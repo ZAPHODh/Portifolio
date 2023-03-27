@@ -12,6 +12,13 @@ type Position = {
 };
 export const SnakeGame = () => {
   const [gameOver, setGameOver] = useState(false);
+  const [modeOn, setModeOn] = useState(false);
+  const [velocity, setVelocity] = useState<number>();
+  useEffect(() => {
+    const localVelocity = localStorage.getItem('velocity');
+    if (!localVelocity) return setVelocity(80);
+    setVelocity(parseInt(localVelocity));
+  }, []);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [snake] = useState([{ x: 10, y: 10 }]);
   const [food, setFood] = useState({ x: 5, y: 5 });
@@ -111,12 +118,12 @@ export const SnakeGame = () => {
       drawFood(ctx);
     };
 
-    interval = setInterval(gameLoop, 100);
+    interval = setInterval(gameLoop, velocity);
 
     return () => {
       clearInterval(interval);
     };
-  }, [snake, food, direction, score]);
+  }, [snake, food, direction, score, velocity]);
 
   useEffect(() => {
     // ...
@@ -192,7 +199,49 @@ export const SnakeGame = () => {
   return (
     <Styled.Wrapper>
       {gameOver ? (
-        <GameOver score={score}></GameOver>
+        <>
+          <Button
+            onClick={() => {
+              setModeOn((mode) => !mode);
+            }}
+            reverse
+            width={'250px'}
+          >
+            Dificuldades
+          </Button>
+          {modeOn && (
+            <Styled.Mode>
+              <Button
+                onClick={() => {
+                  localStorage.setItem('velocity', '100');
+                  setVelocity(100);
+                  window.location.reload();
+                }}
+              >
+                Fácil
+              </Button>
+              <Button
+                onClick={() => {
+                  localStorage.setItem('velocity', '80');
+                  setVelocity(80);
+                  window.location.reload();
+                }}
+              >
+                Normal
+              </Button>
+              <Button
+                onClick={() => {
+                  localStorage.setItem('velocity', '40');
+                  setVelocity(40);
+                  window.location.reload();
+                }}
+              >
+                Difícil
+              </Button>
+            </Styled.Mode>
+          )}
+          <GameOver score={score}></GameOver>
+        </>
       ) : (
         <>
           <Styled.GameCanvas ref={canvasRef} />

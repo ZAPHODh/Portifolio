@@ -37,3 +37,14 @@ export const Controls = styled.div`
     margin: 10px;
   }
 `;
+
+export const Mode = styled.div`
+  margin: 10px;
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
+`;
