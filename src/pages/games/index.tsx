@@ -7,12 +7,13 @@ import { games } from '../../utils/games';
 
 const RouteGames = () => {
   const router = useRouter();
-  const { data: session } = useSession();
+  const { status } = useSession();
   useEffect(() => {
-    if (!session) {
+    if (status === 'unauthenticated') {
       router.push('/');
     }
-  }, [session, router]);
+  }, [router, status]);
+
   return (
     <>
       <Head>
