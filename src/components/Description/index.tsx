@@ -2,7 +2,7 @@ import * as Styled from './styles';
 
 export type DescriptionProps = {
   father?: string;
-  children: string;
+  children: string | React.ReactNode;
   fontSize?: string;
   color?: string;
   maxWidth?: string;

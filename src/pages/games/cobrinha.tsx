@@ -8,13 +8,13 @@ import { useEffect } from 'react';
 // };
 
 const Snake = () => {
-  //   const router = useRouter();
-  //   const { data: session } = useSession();
-  //   useEffect(() => {
-  //     if (!session) {
-  //       router.push('/');
-  //     }
-  //   }, []);
+  const router = useRouter();
+  const { data: session } = useSession();
+  useEffect(() => {
+    if (!session) {
+      router.push('/');
+    }
+  }, []);
   return <SnakeGame></SnakeGame>;
 };
 export default Snake;

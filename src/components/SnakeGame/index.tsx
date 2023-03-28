@@ -240,7 +240,7 @@ export const SnakeGame = () => {
               </Button>
             </Styled.Mode>
           )}
-          <GameOver score={score}></GameOver>
+          <GameOver score={score} mode={velocity}></GameOver>
         </>
       ) : (
         <>
