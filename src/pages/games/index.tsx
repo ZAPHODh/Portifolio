@@ -1,19 +1,12 @@
 import { Games } from '@/templates/Games';
-import { useSession } from 'next-auth/react';
+import { GetServerSidePropsContext } from 'next';
+import { getSession } from 'next-auth/react';
+
 import Head from 'next/head';
-import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+
 import { games } from '../../utils/games';
 
 const RouteGames = () => {
-  const router = useRouter();
-  const { data: session } = useSession();
-  useEffect(() => {
-    if (!session) {
-      router.push('/');
-    }
-  }, [session, router]);
-
   return (
     <>
       <Head>
@@ -24,3 +17,19 @@ const RouteGames = () => {
   );
 };
 export default RouteGames;
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
