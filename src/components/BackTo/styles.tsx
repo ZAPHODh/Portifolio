@@ -12,6 +12,9 @@ export const Wrapper = styled.button`
         padding: 5px;
         font-size: 15px;
         border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:hover{
             cursor: pointer;
             background-color: rgba(0,0,0,0.5);
