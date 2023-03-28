@@ -14,7 +14,7 @@ const Snake = () => {
     if (!session) {
       router.push('/');
     }
-  }, [session]);
+  }, [session, router]);
   return <SnakeGame></SnakeGame>;
 };
 export default Snake;
