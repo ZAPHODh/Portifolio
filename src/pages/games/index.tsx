@@ -12,7 +12,7 @@ const RouteGames = () => {
     if (!session) {
       router.push('/');
     }
-  }, []);
+  }, [session]);
   return (
     <>
       <Head>
