@@ -199,7 +199,7 @@ export const SnakeGame = () => {
 
   return (
     <Styled.Wrapper>
-      <BackTo />
+      <BackTo title="Voltar para os jogos" />
       {gameOver ? (
         <>
           <Button
