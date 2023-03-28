@@ -11,5 +11,10 @@ export const Wrapper = styled.button`
         color: white;
         padding: 5px;
         font-size: 15px;
+        &:hover{
+            cursor: pointer;
+            background-color: rgba(0,0,0,0.5);
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+        }
     `}
 `;
