@@ -9,7 +9,7 @@ export type GameOverProps = {
 };
 
 export const GameOver = ({ score, mode }: GameOverProps) => {
-  const [difficulty, setDifficulty] = useState<string>();
+  const [difficulty, setDifficulty] = useState<string>('Normal');
   useEffect(() => {
     if (!mode) return;
 
