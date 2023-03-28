@@ -213,8 +213,8 @@ export const SnakeGame = () => {
             <Styled.Mode>
               <Button
                 onClick={() => {
-                  localStorage.setItem('velocity', '120');
-                  setVelocity(120);
+                  localStorage.setItem('velocity', '140');
+                  setVelocity(140);
                   window.location.reload();
                 }}
               >
@@ -222,8 +222,8 @@ export const SnakeGame = () => {
               </Button>
               <Button
                 onClick={() => {
-                  localStorage.setItem('velocity', '90');
-                  setVelocity(90);
+                  localStorage.setItem('velocity', '100');
+                  setVelocity(100);
                   window.location.reload();
                 }}
               >
@@ -231,8 +231,8 @@ export const SnakeGame = () => {
               </Button>
               <Button
                 onClick={() => {
-                  localStorage.setItem('velocity', '50');
-                  setVelocity(50);
+                  localStorage.setItem('velocity', '60');
+                  setVelocity(60);
                   window.location.reload();
                 }}
               >
