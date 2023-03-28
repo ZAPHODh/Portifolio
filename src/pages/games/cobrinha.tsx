@@ -1,11 +1,6 @@
 import { SnakeGame } from '@/components/SnakeGame';
-// import { useSession } from 'next-auth/react';
-// import { useRouter } from 'next/navigation';
-// import { useEffect } from 'react';
-
-// export type SnakeProps = {
-//   title?: string;
-// };
+import { getSession } from 'next-auth/react';
+import { GetServerSidePropsContext } from 'next';
 
 const Snake = () => {
   //   const router = useRouter();
@@ -18,3 +13,20 @@ const Snake = () => {
   return <SnakeGame></SnakeGame>;
 };
 export default Snake;
+
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getSession(context);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
