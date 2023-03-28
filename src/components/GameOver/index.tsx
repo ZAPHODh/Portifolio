@@ -13,17 +13,17 @@ export const GameOver = ({ score, mode }: GameOverProps) => {
   useEffect(() => {
     if (!mode) return;
 
-    if (mode === 80) {
+    if (mode === 90) {
       setDifficulty('Normal');
       return;
     }
 
-    if (mode === 100) {
+    if (mode === 120) {
       setDifficulty('Fácil');
       return;
     }
 
-    if (mode === 40) {
+    if (mode === 50) {
       setDifficulty('Difícil');
       return;
     }
