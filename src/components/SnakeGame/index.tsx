@@ -6,6 +6,7 @@ import { ArrowUp } from '@styled-icons/bootstrap/ArrowUp';
 import { ArrowDown } from '@styled-icons/bootstrap/ArrowDown';
 import { ArrowLeft } from '@styled-icons/bootstrap/ArrowLeft';
 import { ArrowRight } from '@styled-icons/bootstrap/ArrowRight';
+import { BackTo } from '../BackTo';
 type Position = {
   x: number;
   y: number;
@@ -198,6 +199,7 @@ export const SnakeGame = () => {
 
   return (
     <Styled.Wrapper>
+      <BackTo />
       {gameOver ? (
         <>
           <Button
