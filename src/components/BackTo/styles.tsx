@@ -11,6 +11,7 @@ export const Wrapper = styled.button`
         color: white;
         padding: 5px;
         font-size: 15px;
+        border: none;
         &:hover{
             cursor: pointer;
             background-color: rgba(0,0,0,0.5);
