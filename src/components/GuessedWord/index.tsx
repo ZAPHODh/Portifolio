@@ -42,7 +42,7 @@ export const GuessedWord = ({
     index: number,
   ) => {
     const value = e.key;
-    if (value === 'Backspace' || value === 'Delete') {
+    if (value === 'Backspace' || value === 'Delete' || e.keyCode === 8) {
       setGuessedWords((guessedWord) =>
         guessedWord.map((letter, i) => {
           if (i === index) {
@@ -56,10 +56,9 @@ export const GuessedWord = ({
 
     if (index === 4) return;
     if (!isNaN(Number(value))) return;
-    setTimeout(() => {
-      inputRefs.current[index + 1]?.focus();
-    }, 0);
+    inputRefs.current[index + 1]?.focus();
   };
+
   return (
     <Styled.Wrapper>
       {splitedWord?.map((letter, index) => (
