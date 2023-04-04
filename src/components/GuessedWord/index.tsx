@@ -58,7 +58,7 @@ export const GuessedWord = ({
     if (!isNaN(Number(value))) return;
     setTimeout(() => {
       inputRefs.current[index + 1]?.focus();
-    }, 0);
+    }, 50);
   };
 
   return (
