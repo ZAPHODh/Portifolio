@@ -76,10 +76,12 @@ export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
 
     if (isComplete) {
       setVictory(true);
+      console.log(victory);
     }
 
     if (round === 4 && !isComplete) {
       setLose(true);
+      console.log(lose);
     }
 
     setRound((prevRound) => prevRound + 1);
