@@ -2,7 +2,7 @@ import { getSession } from 'next-auth/react';
 import { GetServerSidePropsContext } from 'next';
 import { GuessedWordRound } from '@/components/GuessedWordRound';
 
-export const Wordle = () => {
+const Wordle = () => {
   return (
     <GuessedWordRound
       word={[
@@ -43,3 +43,4 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: {},
   };
 }
+export default Wordle;
