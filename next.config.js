@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'res.klook.com',
+        hostname: 'res.cloudinary.com',
         port: '',
       },
     ],

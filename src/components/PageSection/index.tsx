@@ -1,4 +1,4 @@
-import { useWindowWidth } from '@/hooks/useWindowWidth';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 import { useState } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import { CompletePage } from '../Card';

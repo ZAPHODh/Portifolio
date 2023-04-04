@@ -1,6 +1,6 @@
 'use client';
 
-import { Title } from '@/components/Heading/styles';
+import { Title } from '../../components/Heading/styles';
 import styled, { css } from 'styled-components';
 export const Wrapper = styled.main`
     ${() => css`

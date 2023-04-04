@@ -1,6 +1,6 @@
-import { Heading } from '@/components/Heading';
-import { Menu } from '@/components/Menu';
-import { TinyCard } from '@/components/TinyCard';
+import { Heading } from '../../components/Heading';
+import { Menu } from '../../components/Menu';
+import { TinyCard } from '../../components/TinyCard';
 import { BannerContainer } from '../Project/styles';
 import { v4 as uuid } from 'uuid';
 import * as Styled from './styles';
