@@ -120,7 +120,7 @@ export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
           correct={correct[index]}
         />
       ))}
-      <Button reverse={true} width={'325px'} onClick={handleSubmit}>
+      <Button reverse={true} width={'300px'} onClick={handleSubmit}>
         Enviar
       </Button>
     </Styled.Wrapper>
