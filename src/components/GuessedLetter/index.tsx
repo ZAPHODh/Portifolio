@@ -27,6 +27,7 @@ export const GuessedLetter = forwardRef<InputRef, GuessedLetterProps>(
         onKeyDown={onKeyDown}
         bg={bg}
         isAnimating={isAnimating}
+        autoComplete="off"
       />
     );
   },
