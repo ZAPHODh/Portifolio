@@ -30,5 +30,5 @@ export const Wrapper = styled.input<{
     border: 1px solid white;
   }
   ${({ isAnimating }) =>
-    isAnimating ? css`animation: ${Spin} 2s linear ;` : ''}
+    isAnimating ? css`animation: ${Spin} 1s linear ;` : ''}
 `;

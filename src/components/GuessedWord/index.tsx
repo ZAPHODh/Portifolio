@@ -42,6 +42,14 @@ export const GuessedWord = ({
     index: number,
   ) => {
     const value = e.key;
+    setGuessedWords((guessedWord) =>
+      guessedWord.map((letter, i) => {
+        if (letter !== '') {
+          return value;
+        }
+        return letter;
+      }),
+    );
     if (value === 'Backspace' || value === 'Delete' || e.keyCode === 8) {
       setGuessedWords((guessedWord) =>
         guessedWord.map((letter, i) => {
