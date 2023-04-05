@@ -16,7 +16,7 @@ export const Wrapper = styled.input<{
 }>`
   width: 50px;
   height: 50px;
-  
+  backface-visibility: hidden;
   border: ${({ bg }) => (bg === '' ? '1px solid #8b8b8b' : '1px solid black')};
   background-color: ${({ bg }) =>
     bg === 'almost' ? '#eedc83' : bg === 'correct' ? '#5aab61' : 'transparent'};
