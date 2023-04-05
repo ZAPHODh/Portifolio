@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { GuessedLetter, InputRef } from '../GuessedLetter';
 import { v4 as uuid } from 'uuid';
 import * as Styled from './styles';
@@ -42,14 +42,6 @@ export const GuessedWord = ({
     index: number,
   ) => {
     const value = e.key;
-    setGuessedWords((guessedWord) =>
-      guessedWord.map((letter, i) => {
-        if (letter !== '') {
-          return value;
-        }
-        return letter;
-      }),
-    );
     if (value === 'Backspace' || value === 'Delete' || e.keyCode === 8) {
       setGuessedWords((guessedWord) =>
         guessedWord.map((letter, i) => {
@@ -61,14 +53,14 @@ export const GuessedWord = ({
       );
       return;
     }
-
-    if (index === 4) return;
     if (!isNaN(Number(value))) return;
-    setTimeout(() => {
+    if (index < inputRefs.current.length - 1) {
       inputRefs.current[index + 1]?.focus();
-    }, 50);
+    }
   };
-
+  useEffect(() => {
+    inputRefs.current[0]?.focus();
+  }, []);
   return (
     <Styled.Wrapper>
       {splitedWord?.map((letter, index) => (
