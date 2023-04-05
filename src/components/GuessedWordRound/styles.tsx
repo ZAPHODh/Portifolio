@@ -10,3 +10,12 @@ export const Wrapper = styled.div`
     flex-direction:column;
     `}
 `;
+
+export const GuessedContainer = styled.div<{ render: boolean }>`
+     ${({ render }) => css`
+    display:${render ? 'flex' : 'nonde'};
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    `}
+`;

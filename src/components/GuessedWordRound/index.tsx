@@ -3,6 +3,7 @@ import * as Styled from './styles';
 import { GuessedWord } from '../GuessedWord';
 import { v4 as uuid } from 'uuid';
 import { Button } from '../Button';
+import { LoseWordle } from '../LoseWordle';
 
 export type GuessedWordRoundProps = {
   word: string[];
@@ -11,6 +12,7 @@ export type Correct = 'correct' | 'almost' | '';
 export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
   const [victory, setVictory] = useState(false);
   const [lose, setLose] = useState(false);
+  const [render, setRender] = useState(true);
   const [isAnimating, setIsAnimating] = useState<boolean[]>([
     false,
     false,
@@ -85,12 +87,12 @@ export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
 
     if (isComplete) {
       setVictory(true);
-      console.log(victory);
+      setRender(false);
     }
 
     if (round === 4 && !isComplete) {
       setLose(true);
-      console.log(lose);
+      setRender(false);
     }
 
     setRound((prevRound) => prevRound + 1);
@@ -117,20 +119,26 @@ export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
 
   return (
     <Styled.Wrapper>
-      {guessedWords.map((_, index) => (
-        <GuessedWord
-          word={selectedWord}
-          disabled={index !== round}
-          key={uuid()}
-          guessedWords={guessedWords[index]}
-          setGuessedWords={(newGuess) => handleGuessWordChange(index, newGuess)}
-          isAnimating={isAnimating[index]}
-          correct={correct[index]}
-        />
-      ))}
-      <Button reverse={true} width={'300px'} onClick={handleSubmit}>
-        Enviar
-      </Button>
+      <Styled.GuessedContainer render={render}>
+        {guessedWords.map((_, index) => (
+          <GuessedWord
+            word={selectedWord}
+            disabled={index !== round}
+            key={uuid()}
+            guessedWords={guessedWords[index]}
+            setGuessedWords={(newGuess) =>
+              handleGuessWordChange(index, newGuess)
+            }
+            isAnimating={isAnimating[index]}
+            correct={correct[index]}
+          />
+        ))}
+        <Button reverse={true} width={'300px'} onClick={handleSubmit}>
+          Enviar
+        </Button>
+      </Styled.GuessedContainer>
+      {lose && <LoseWordle word={selectedWord} win={false} />}
+      {victory && <LoseWordle word={selectedWord} win={true} />}
     </Styled.Wrapper>
   );
 };
