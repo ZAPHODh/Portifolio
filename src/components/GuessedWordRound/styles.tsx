@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 
 export const GuessedContainer = styled.div<{ render: boolean }>`
      ${({ render }) => css`
-    display:${render ? 'flex' : 'nonde'};
+    display:${render ? 'flex' : 'none'};
     align-items:center;
     justify-content:center;
     flex-direction:column;
