@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { Wrapper as Description } from '../Description/styles';
+import { Title } from '../Heading/styles';
 
 export const Wrapper = styled.div`
     ${() => css`
@@ -14,6 +15,9 @@ export const Wrapper = styled.div`
         >${Description}{
             padding-top:20px;
             margin-bottom:-5px;
+        }
+        >${Title}{
+            padding:20px;
         }
     `}
 `;
