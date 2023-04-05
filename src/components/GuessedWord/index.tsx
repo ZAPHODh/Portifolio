@@ -22,7 +22,7 @@ export const GuessedWord = ({
   correct,
 }: GuessedWordProps) => {
   const inputRefs = useRef<Array<InputRef>>([]);
-  const [selectedInput, setSelectedInput] = useState(0);
+  const [focusedInput, setFocusedInput] = useState(0);
   const splitedWord = word?.split('');
 
   const handleOnChange = (
@@ -55,12 +55,22 @@ export const GuessedWord = ({
       return;
     }
     if (!isNaN(Number(value))) return;
-    setSelectedInput(index);
+    console.log(index);
+    console.log(focusedInput);
   };
-
   useEffect(() => {
-    inputRefs.current[selectedInput === 0 ? 0 : selectedInput + 1]?.focus();
-  }, [selectedInput]);
+    if (
+      focusedInput < splitedWord.length &&
+      guessedWords[focusedInput] &&
+      guessedWords[focusedInput].length === 1 &&
+      isNaN(Number(guessedWords[focusedInput]))
+    ) {
+      setFocusedInput(focusedInput + 1);
+    }
+  }, [guessedWords, focusedInput, splitedWord.length]);
+  useEffect(() => {
+    inputRefs.current[focusedInput]?.focus();
+  }, [focusedInput]);
 
   return (
     <Styled.Wrapper>
