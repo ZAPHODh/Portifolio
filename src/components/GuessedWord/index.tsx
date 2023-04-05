@@ -60,9 +60,9 @@ export const GuessedWord = ({
     }
     if (!isNaN(Number(value))) return;
   };
-  useEffect(() => {
-    inputRefs.current[0]?.focus();
-  }, []);
+  //   useEffect(() => {
+  //     inputRefs.current[0]?.focus();
+  //   }, []);
   return (
     <Styled.Wrapper>
       {splitedWord?.map((letter, index) => (
