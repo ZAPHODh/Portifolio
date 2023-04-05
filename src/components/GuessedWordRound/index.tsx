@@ -56,7 +56,15 @@ export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
       newValue[round] = true;
       return newValue;
     });
-
+    setIsAnimating((previousValue) => {
+      const newValue = previousValue.map((value, index) => {
+        if (index < round) {
+          return false;
+        }
+        return value;
+      });
+      return newValue;
+    });
     const newCorrectArray = splitedWord.map((char, i) => {
       if (char === guessedWords[round][i]) {
         return 'correct';
