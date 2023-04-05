@@ -2,6 +2,7 @@ import { SetStateAction, useEffect, useState } from 'react';
 import * as Styled from './styles';
 import { GuessedWord } from '../GuessedWord';
 import { v4 as uuid } from 'uuid';
+import { Button } from '../Button';
 
 export type GuessedWordRoundProps = {
   word: string[];
@@ -119,6 +120,9 @@ export const GuessedWordRound = ({ word = [] }: GuessedWordRoundProps) => {
           correct={correct[index]}
         />
       ))}
+      <Button reverse={true} width={'325px'} onClick={handleSubmit}>
+        Enviar
+      </Button>
     </Styled.Wrapper>
   );
 };
