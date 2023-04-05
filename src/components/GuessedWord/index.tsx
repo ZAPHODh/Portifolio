@@ -23,7 +23,6 @@ export const GuessedWord = ({
 }: GuessedWordProps) => {
   const inputRefs = useRef<Array<InputRef>>([]);
   const splitedWord = word?.split('');
-
   const handleOnChange = (
     index: number,
     e: React.ChangeEvent<HTMLInputElement>,
@@ -35,6 +34,12 @@ export const GuessedWord = ({
       updatedGuess[index] = value;
       return updatedGuess;
     });
+
+    if (index < 4 && value !== '') {
+      setTimeout(() => {
+        inputRefs.current[index + 1]?.focus();
+      }, 50);
+    }
   };
 
   const handleKeyDown = (
@@ -54,9 +59,6 @@ export const GuessedWord = ({
       return;
     }
     if (!isNaN(Number(value))) return;
-    if (index < inputRefs.current.length - 1) {
-      inputRefs.current[index + 1]?.focus();
-    }
   };
   useEffect(() => {
     inputRefs.current[0]?.focus();
