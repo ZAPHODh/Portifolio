@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { GuessedLetter, InputRef } from '../GuessedLetter';
 import { v4 as uuid } from 'uuid';
 import * as Styled from './styles';
@@ -22,7 +22,9 @@ export const GuessedWord = ({
   correct,
 }: GuessedWordProps) => {
   const inputRefs = useRef<Array<InputRef>>([]);
+  const [selectedInput, setSelectedInput] = useState(0);
   const splitedWord = word?.split('');
+
   const handleOnChange = (
     index: number,
     e: React.ChangeEvent<HTMLInputElement>,
@@ -34,12 +36,6 @@ export const GuessedWord = ({
       updatedGuess[index] = value;
       return updatedGuess;
     });
-
-    if (index < 4 && value !== '') {
-      setTimeout(() => {
-        inputRefs.current[index + 1]?.focus();
-      }, 50);
-    }
   };
 
   const handleKeyDown = (
@@ -59,10 +55,13 @@ export const GuessedWord = ({
       return;
     }
     if (!isNaN(Number(value))) return;
+    setSelectedInput(index);
   };
-  //   useEffect(() => {
-  //     inputRefs.current[0]?.focus();
-  //   }, []);
+
+  useEffect(() => {
+    inputRefs.current[selectedInput === 0 ? 0 : selectedInput + 1]?.focus();
+  }, [selectedInput]);
+
   return (
     <Styled.Wrapper>
       {splitedWord?.map((letter, index) => (
