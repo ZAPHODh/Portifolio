@@ -66,28 +66,31 @@ export const Menu = ({
         ZAPHODh
       </Heading>
       <Styled.ContainerSmallWindow>
-        {session ? (
+        {!session?.isLoading && (
           <>
-            <Button onClick={handleClickGames} reverse={true}>
-              Jogos
-            </Button>
-
-            <Button
-              onClick={() => {
-                signOut();
-              }}
-            >
-              Deslogar
-            </Button>
+            {session ? (
+              <>
+                <Button onClick={handleClickGames} reverse={true}>
+                  Jogos
+                </Button>
+                <Button
+                  onClick={() => {
+                    signOut();
+                  }}
+                >
+                  Deslogar
+                </Button>
+              </>
+            ) : (
+              <Button
+                onClick={() => {
+                  signIn();
+                }}
+              >
+                Login
+              </Button>
+            )}
           </>
-        ) : (
-          <Button
-            onClick={() => {
-              signIn();
-            }}
-          >
-            Login
-          </Button>
         )}
 
         <Styled.Hamburguer onClick={handleClickMenuIcon}>
