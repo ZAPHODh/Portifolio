@@ -30,7 +30,7 @@ export const Menu = ({
   const [openMenu, setOpenMenu] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const router = useRouter();
-  const { data: session } = useSession();
+  const { status } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,30 +66,26 @@ export const Menu = ({
         ZAPHODh
       </Heading>
       <Styled.ContainerSmallWindow>
-        {!session?.isLoading && (
+        {status === 'loading' ? null : status === 'unauthenticated' ? (
+          <Button
+            onClick={() => {
+              signIn();
+            }}
+          >
+            Login
+          </Button>
+        ) : (
           <>
-            {session ? (
-              <>
-                <Button onClick={handleClickGames} reverse={true}>
-                  Jogos
-                </Button>
-                <Button
-                  onClick={() => {
-                    signOut();
-                  }}
-                >
-                  Deslogar
-                </Button>
-              </>
-            ) : (
-              <Button
-                onClick={() => {
-                  signIn();
-                }}
-              >
-                Login
-              </Button>
-            )}
+            <Button onClick={handleClickGames} reverse={true}>
+              Jogos
+            </Button>
+            <Button
+              onClick={() => {
+                signOut();
+              }}
+            >
+              Deslogar
+            </Button>
           </>
         )}
 
