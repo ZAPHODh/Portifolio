@@ -66,7 +66,9 @@ export const Menu = ({
         ZAPHODh
       </Heading>
       <Styled.ContainerSmallWindow>
-        {status === 'loading' ? null : status === 'unauthenticated' ? (
+        {status === 'loading' ? (
+          <p>Verificando...</p>
+        ) : status === 'unauthenticated' ? (
           <Button
             onClick={() => {
               signIn();
