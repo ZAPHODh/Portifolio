@@ -34,7 +34,7 @@ export const mock: CardProps[] = [
     completePage: [
       {
         description:
-          'Uma aplicação feita com técnologias super modernas : Next.js, Styled-componentes, StoryBoook, Jest, Next-Auth, MUI, Styled-Icons e mais.',
+          'Uma aplicação feita com técnologias super modernas : Next.js, Styled-componentes, StoryBoook, Jest, Next-Auth, MUI, Styled-Icons e mais. Fiz ele com muito carinho e dedicação, utilizando peletas de cores mais escuras e diretas, deixando tudo bem objetivo e clean, bem o meu perfil. Adicionei rotas seguras com alguns jogos, caso voce logue, conseguirá testá-las. ',
         img: PortifolioGeral.src,
         title: 'Visão geral',
       },
