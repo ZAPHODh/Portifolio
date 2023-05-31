@@ -21,7 +21,12 @@ export const PageSection = ({ page, index }: PageSectionProps) => {
           <Heading as={`h${index + 2}` as HeadingType}>{page.title}</Heading>
         )}
         <Styled.ImgContainer progress={progress}>
-          <Styled.Img src={page.img} alt={page.title} />
+          <Styled.Img
+            src={page.img}
+            alt={page.title}
+            width={1080}
+            height={1920}
+          />
         </Styled.ImgContainer>
         <Styled.TextContainer progress={progress} index={index}>
           {windowWidth > 728 && (

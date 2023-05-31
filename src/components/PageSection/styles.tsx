@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 import { Wrapper as Description } from '../Description/styles';
+import NexTImage from 'next/image';
 import { Title } from '../Heading/styles';
 const animationLeft = keyframes`
     0%{
@@ -168,7 +169,7 @@ export const TextContainer = styled.div<{ progress: number; index: number }>`
     `}
 `;
 
-export const Img = styled.img`
+export const Img = styled(NexTImage)`
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -192,6 +193,7 @@ export const ImgContainer = styled.div<{ progress: number }>`
             ${() => {
               if (progress < 0.3 || progress > 0.7)
                 return css`
+                     
                         animation: ${Invisible} 0.5s linear;
                         animation-iteration-count: 1;
                         opacity: 0;
@@ -200,6 +202,7 @@ export const ImgContainer = styled.div<{ progress: number }>`
             ${() => {
               if (progress > 0.3 && progress < 0.7)
                 return css`
+                      
                         animation: ${Shake} 0.5s linear;
                         animation-iteration-count: 1;
                     `;

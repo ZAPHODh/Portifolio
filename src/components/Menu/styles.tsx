@@ -12,7 +12,8 @@ export const Wrapper = styled.header<{ isFixed: boolean }>`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, ${isFixed ? 0.5 : 0});
+        backdrop-filter: blur(${isFixed ? '5px' : '0'});
         width: 100%;
         height: 70px;
         padding: 10px 20px;
@@ -86,10 +87,4 @@ export const CloseMenuSmallWindow = styled.button`
         border: 1px white solid;
         color: white;
     }
-`;
-
-export const Divisor = styled.div`
-   border: 1px solid #8b8b8b;
-   height: 20px;
-   margin: 5px;
 `;

@@ -1,17 +1,25 @@
 import { CardProps } from '@/components/Card';
-
+import MauroLogo from '../../../../public/images/logo-card.webp';
+import ApresentationImage from '../../../../public/images/first-mc-pic.png';
+import LighthousePerformanceImage from '../../../../public/images/lighthouse.png';
 export const mock: CardProps[] = [
   {
     title: 'Mauro Chrisostimo',
     description:
       'Uma SPA, com a qual o usuário consegue ver promoções, login, realizar agendamentos, ver a localidade do salão, contactar o salão por wpp e mais.',
-    url: 'https://res.cloudinary.com/den5sokzr/image/upload/v1680386561/imagem_2023-04-01_185819683_xim4yo.webp',
+    url: MauroLogo.src,
     completePage: [
       {
         description:
-          'complete mock description f sdg sdgs dgsd gsdgsdgsdgsdgsdg sd gsdgsdgsdgsdgsdg  sdgs dgsd gsd gsd sd gsd gsd gsdgsdg sdg sd gsdgsdgsd gsd gsdgsdgsdg sdg sd gsdgsdgsd gsdgsdgsdgsdgsdgsdg sdg sd gsd gsd gsd gsd gsd gsd gsdgsd gsdgsgsdgsdgsdgsdgsdgsdgsdgsd gs sd sd gsd gsd gsd gsdgsd gsdgsd sd gsdgsdgsdgsdgsdgsdgsdgsdgsd gsdgsdgsdgsdgsdsd gsdgsdgsdgsdgsdgs dgsdgsdsgsd gsdgsdgsdgsd gsdgsdgsdgsdgsdg sd sg sdg sd gsdg sd s gs dgsdgsdgsdgsd sdg',
-        img: 'https://res.cloudinary.com/den5sokzr/image/upload/v1680386561/imagem_2023-04-01_185819683_xim4yo.webp',
-        title: 'complete mock title',
+          'Uma SPA, com a qual o usuário consegue ver promoções, login, realizar agendamentos, ver a localidade do salão, contactar o salão por wpp, pelas redes sociais. Desenvolvida usando as tecnologias Nextjs para o front-end e strapi para o back-end.',
+        img: ApresentationImage.src,
+        title: 'Visão geral',
+      },
+      {
+        description:
+          'Resultados no lighthouse são extremamente positivos. Lighthouse é uma ferramenta do google para avaliação da página em relação a diversos aspectos: Desempenho, acessibilidade, boas práticas e SEO. Em desempenho, as notas variam entre 70 - 80, por caus do tempo de resposta do servidor e imagens. Acessibilitade sempre me da a nota maxima, ja que eu preparei a página da melhor forma nesse quesito. Nas boas práticas e CEO, também recebo nota máxima.',
+        img: LighthousePerformanceImage.src,
+        title: 'Desempenho',
       },
     ],
   },

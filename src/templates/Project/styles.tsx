@@ -1,9 +1,10 @@
 'use client';
 
 import { Title } from '../../components/Heading/styles';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 export const Wrapper = styled.main`
     ${() => css`
+    position: relative;
         color: white;
         display: flex;
         align-items: center;
@@ -26,10 +27,49 @@ export const PageContent = styled.div`
 export const BannerContainer = styled.div`
     ${() => css`
         width: 100%;
-        height: 300px;
+        height: 700px;
         display: flex;
         align-items: center;
         justify-content: center;
         background: linear-gradient(#000000, transparent);
+
+        @media (min-width: 1921px) {
+            height: 1000px;
+            
+        }
     `}
+`;
+export const ArrowContainer = styled.div`
+    ${() => css`
+    position: absolute;
+    top:53rem;
+    font-size: 50px;
+    animation: ${ArrowAnimation}  0.5s ease-in infinite;
+    @media (min-width: 1921px) {
+        top:73rem;
+        animation: ${ArrowAnimationBigScreen}  0.5s ease-in infinite;
+        }
+    `}
+`;
+const ArrowAnimation = keyframes`
+    0%{
+        top: 53rem;
+    }
+    50%{
+        top: 55rem;
+    }
+    100%{
+        top: 53rem;
+    }
+`;
+const ArrowAnimationBigScreen = keyframes`
+    0%{
+        top: 73rem;
+    }
+    50%{
+        top: 75rem;
+    }
+    100%{
+        top: 73rem;
+    }
 `;

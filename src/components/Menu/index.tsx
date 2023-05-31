@@ -94,9 +94,7 @@ export const Menu = ({
         <Styled.Hamburguer onClick={handleClickMenuIcon}>
           <MenuIcon fontSize="inherit" />
         </Styled.Hamburguer>
-
         <Styled.MenuNav clicked={openMenu}>
-          <Styled.Divisor />
           <Styled.CloseMenuSmallWindow onClick={handleCloseMenuNav}>
             <CloseIcon fontSize="inherit" />
           </Styled.CloseMenuSmallWindow>
