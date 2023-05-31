@@ -174,7 +174,6 @@ export const Img = styled(NexTImage)`
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
-    border: 2px solid white;
 `;
 
 export const ImgContainer = styled.div<{ progress: number }>`

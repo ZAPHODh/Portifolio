@@ -16,9 +16,9 @@ export const Wrapper = styled.div`
         justify-content: flex-start;
         flex-direction: column;
         &:hover {
-            border: 0.5px solid #2097f7;
+            border: 0.5px solid white;
             background-color: rgba(0, 0, 0, 0.5);
-            box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.3);
         }
         > ${Title} {
             padding: 10px;
