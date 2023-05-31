@@ -2,9 +2,9 @@ import { CardProps } from '@/components/Card';
 import MauroLogo from '../../../../public/images/logo-card.webp';
 import ApresentationImage from '../../../../public/images/first-mc-pic.webp';
 import LighthousePerformanceImage from '../../../../public/images/lighthouse.webp';
-import PortifolioGeral from '../../../../public/images/portifolioGeral.png';
-import PortifolioCard from '../../../../public/images/portifolioCard.png';
-import LightRousePortifolio from '../../../../public/images/lighthousePortifolio.png';
+import PortifolioGeral from '../../../../public/images/portifolioGeral.webp';
+import PortifolioCard from '../../../../public/images/portifolioCard.webp';
+import LightRousePortifolio from '../../../../public/images/lighthousePortifolio.webp';
 export const mock: CardProps[] = [
   {
     title: 'Mauro Chrisostimo',

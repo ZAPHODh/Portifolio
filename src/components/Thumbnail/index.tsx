@@ -8,7 +8,7 @@ export type ThumbnailProps = {
 export const Thumbnail = ({ src, alt }: ThumbnailProps) => {
   return (
     <Styled.Wrapper>
-      <Image src={src} alt={alt} width={230} height={130} />
+      <Image src={src} alt={alt} width={230} height={130} loading="lazy" />
     </Styled.Wrapper>
   );
 };
