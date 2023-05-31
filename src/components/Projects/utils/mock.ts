@@ -1,7 +1,7 @@
 import { CardProps } from '@/components/Card';
 import MauroLogo from '../../../../public/images/logo-card.webp';
-import ApresentationImage from '../../../../public/images/first-mc-pic.png';
-import LighthousePerformanceImage from '../../../../public/images/lighthouse.png';
+import ApresentationImage from '../../../../public/images/first-mc-pic.webp';
+import LighthousePerformanceImage from '../../../../public/images/lighthouse.webp';
 export const mock: CardProps[] = [
   {
     title: 'Mauro Chrisostimo',
