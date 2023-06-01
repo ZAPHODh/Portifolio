@@ -19,7 +19,9 @@ export const Projects = ({ projects = mock }: ProjectsProps) => {
               completePage={project.completePage}
               description={project.description}
               title={project.title}
-              url={project.url}
+              img={project.img}
+              git={project.git}
+              appPage={project.appPage}
             ></Card>
           ))}
       </Styled.CardContainer>

@@ -4,6 +4,7 @@ import { Projects } from '@/components/Projects';
 import { Tecnologies } from '@/components/Tecnologies';
 import Head from 'next/head';
 import * as Styled from './styles';
+import { Footer } from '@/components/Footer';
 export type HomePageProps = {
   title?: string;
 };
@@ -36,6 +37,7 @@ export const HomePage = ({ title }: HomePageProps) => {
         />
         <Tecnologies />
         <Projects />
+        <Footer />
       </Styled.Wrapper>
     </>
   );

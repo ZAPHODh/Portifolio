@@ -8,9 +8,11 @@ import LightRousePortifolio from '../../../../public/images/lighthousePortifolio
 export const mock: CardProps[] = [
   {
     title: 'Mauro Chrisostimo',
+    git: 'https://github.com/ZAPHODh/MauroProfile',
+    appPage: 'https://maurochrisostimo.com.br',
     description:
       'Uma SPA, com a qual o usuário consegue ver promoções, login, realizar agendamentos, ver a localidade do salão, contactar o salão por wpp e mais.',
-    url: MauroLogo.src,
+    img: MauroLogo.src,
     completePage: [
       {
         description:
@@ -30,7 +32,9 @@ export const mock: CardProps[] = [
     title: 'Portifólio',
     description:
       'Portifólio que voces estão acessando agora. É uma aplicação feita no meu estilo, cuidado e carinho, para demonstrar minhas habilidades com desenvolvimento web',
-    url: PortifolioCard.src,
+    img: PortifolioCard.src,
+    git: 'https://github.com/ZAPHODh/Portifolioe',
+    appPage: 'https://portifolio-tau-blond.vercel.app',
     completePage: [
       {
         description:

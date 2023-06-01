@@ -31,8 +31,8 @@ export const BannerContainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         background: linear-gradient(#000000, transparent);
-
         @media (min-width: 1921px) {
             height: 1000px;
             
@@ -72,4 +72,12 @@ const ArrowAnimationBigScreen = keyframes`
     100%{
         top: 73rem;
     }
+`;
+
+export const LinksContainer = styled.div`
+  ${() => css`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  `}
 `;

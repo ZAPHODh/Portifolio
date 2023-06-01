@@ -13,23 +13,33 @@ export type CompletePage = {
 export type CardProps = {
   title: string;
   description: string;
-  url: string;
+  img: string;
+  git?: string;
+  appPage?: string;
   completePage: CompletePage[];
 };
 
-export const Card = ({ title, url, description, completePage }: CardProps) => {
+export const Card = ({
+  title,
+  img,
+  description,
+  completePage,
+  git,
+  appPage,
+}: CardProps) => {
   const router = useRouter();
   const handleButtonClick = () => {
     router.push(
-      `/projects/${title}?title=${title}&completePage=${JSON.stringify(
-        completePage,
-      )}`,
+      `/projects/${title}?title=${title}&links=${JSON.stringify({
+        git,
+        appPage,
+      })}&completePage=${JSON.stringify(completePage)}`,
     );
   };
   return (
     <Styled.Wrapper>
       <Heading as="h2">{title}</Heading>
-      <Thumbnail src={url} alt={`${title}-thumb`}></Thumbnail>
+      <Thumbnail src={img} alt={`${title}-thumb`}></Thumbnail>
       <Description father={title} padding="10px" maxWidth="82%" maxChars={400}>
         {description}
       </Description>

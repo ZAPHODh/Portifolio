@@ -10,6 +10,7 @@ type Button = {
 export const Wrapper = styled.button<Button>`
     ${({ rounded, width, borderColor, fontSize, center, reverse }) => css`
         position: relative;
+        height: 40px;
         overflow: hidden;
         margin: 5px;
         width: ${width};
