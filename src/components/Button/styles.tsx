@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Position } from '.';
 type Button = {
   rounded: boolean;
   width: number | string;
@@ -9,6 +10,8 @@ type Button = {
 };
 export const Wrapper = styled.button<Button>`
     ${({ rounded, width, borderColor, fontSize, center, reverse }) => css`
+        position: relative;
+        overflow: hidden;
         margin: 5px;
         width: ${width};
         padding: 10px;
