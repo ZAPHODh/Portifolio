@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Position } from '.';
 type Button = {
   rounded: boolean;
   width: number | string;

@@ -10,10 +10,7 @@ export type ButtonProps = {
   reverse?: boolean;
   disabled?: boolean;
 };
-export type Position = {
-  x: number;
-  y: number;
-};
+
 export const Button = ({
   children,
   onClick,
