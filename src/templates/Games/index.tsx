@@ -4,7 +4,7 @@ import { TinyCard } from '../../components/TinyCard';
 import { BannerContainer } from '../Project/styles';
 import { v4 as uuid } from 'uuid';
 import * as Styled from './styles';
-import { Footer } from '@/components/Footer';
+import { Footer } from '../../components/Footer';
 export type Game = {
   name: string;
   disabled: boolean;

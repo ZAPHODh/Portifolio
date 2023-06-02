@@ -10,7 +10,7 @@ import * as Styled from './styles';
 import { v4 as uuid } from 'uuid';
 import { Button } from '../../components/Button';
 import { useState } from 'react';
-import { Footer } from '@/components/Footer';
+import { Footer } from '../../components/Footer';
 
 export type Links = {
   git: string;
