@@ -33,10 +33,6 @@ export const BannerContainer = styled.div`
         justify-content: center;
         flex-direction: column;
         background: linear-gradient(#000000, transparent);
-        @media (min-width: 1921px) {
-            height: 1000px;
-            
-        }
     `}
 `;
 export const ArrowContainer = styled.div`
