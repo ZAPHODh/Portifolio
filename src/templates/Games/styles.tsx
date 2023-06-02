@@ -23,6 +23,7 @@ export const GameContent = styled.section`
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-grow: 1;
         @media (max-width:728px) {
             flex-direction: column;
             
