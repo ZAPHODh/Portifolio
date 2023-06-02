@@ -4,7 +4,7 @@ import { Title } from '../../components/Heading/styles';
 import styled, { css, keyframes } from 'styled-components';
 export const Wrapper = styled.main`
     ${() => css`
-        position: relative;
+    position: relative;
         color: white;
         display: flex;
         align-items: center;
@@ -33,6 +33,9 @@ export const BannerContainer = styled.div`
         justify-content: center;
         flex-direction: column;
         background: linear-gradient(#000000, transparent);
+        @media (min-width: 1921px) {
+            height: 1000px;
+        }
     `}
 `;
 export const ArrowContainer = styled.div`
