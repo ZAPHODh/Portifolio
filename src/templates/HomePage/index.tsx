@@ -5,12 +5,8 @@ import { Tecnologies } from '@/components/Tecnologies';
 import Head from 'next/head';
 import * as Styled from './styles';
 import { Footer } from '@/components/Footer';
-export type HomePageProps = {
-  title?: string;
-};
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const HomePage = ({ title }: HomePageProps) => {
+export const HomePage = () => {
   return (
     <>
       <Head>
