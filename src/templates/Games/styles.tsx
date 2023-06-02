@@ -1,7 +1,7 @@
 'use client';
 
 import styled, { css } from 'styled-components';
-
+import { BannerContainer } from '../Project/styles';
 export const Wrapper = styled.div`
     ${() => css`
     width: 100%;
@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     color: white;
+    >${BannerContainer}{
+        height: 300px;
+    }
     `}
 `;
 
