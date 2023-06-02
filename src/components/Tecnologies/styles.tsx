@@ -27,8 +27,11 @@ export const AllTechs = styled.div`
         height: 100px;
     `}
 `;
-export const Tech = styled.div`
+export const Tech = styled.button`
     ${() => css`
+        color:#8c8c8c;
+        border: none;
+        background-color: transparent;
         margin: 5px;
         width: 100px;
         padding: 10px;
@@ -41,6 +44,7 @@ export const Tech = styled.div`
         }
         &:hover {
             color: white;
+            cursor: pointer;
         }
     `}
 `;
