@@ -4,7 +4,8 @@ import { Title } from '../../components/Heading/styles';
 import styled, { css, keyframes } from 'styled-components';
 export const Wrapper = styled.main`
     ${() => css`
-    position: relative;
+        min-height: 100vh;
+        position: relative;
         color: white;
         display: flex;
         align-items: center;
