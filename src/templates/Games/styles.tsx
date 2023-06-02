@@ -5,7 +5,7 @@ import { BannerContainer } from '../Project/styles';
 export const Wrapper = styled.div`
     ${() => css`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
