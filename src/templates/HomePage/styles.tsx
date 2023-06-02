@@ -10,6 +10,5 @@ export const Wrapper = styled.div`
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
-        flex: 1;
     `}
 `;
