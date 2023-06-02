@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 
 export const GameContent = styled.section`
     ${() => css`
-        height: 100%;
+        height: 800px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -27,7 +27,7 @@ export const GameContent = styled.section`
         flex: 1;
         @media (max-width:728px) {
             flex-direction: column;
-            
+            height: 100%;
         }
     `}
 `;
