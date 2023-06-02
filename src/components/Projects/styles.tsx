@@ -5,6 +5,7 @@ import { Title } from '../Heading/styles';
 
 export const Wrapper = styled.section`
     ${() => css`
+        flex-grow: 1;
         background-color: rgba(255, 255, 255, 0.05);
         width: 100%;
         display: flex;
