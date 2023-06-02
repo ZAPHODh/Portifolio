@@ -30,7 +30,7 @@ export const Games = ({ games }: GamesProps) => {
             ></TinyCard>
           ))}
       </Styled.GameContent>
-      <Footer />
+      <Footer bg={true} />
     </Styled.Wrapper>
   );
 };
