@@ -9,5 +9,9 @@ export const Wrapper = styled.div`
         align-items: flex-start;
         justify-content: center;
         flex-direction: column;
+        height: 100vh;
+        @media (max-width:728px) {
+        height: 100%;
+        }
     `}
 `;

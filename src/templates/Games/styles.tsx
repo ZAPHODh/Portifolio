@@ -11,6 +11,10 @@ export const Wrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     color: white;
+    @media (max-width:728px) {
+        height: 100%;
+
+        }
     >${BannerContainer}{
         height: 300px;
     }
@@ -27,7 +31,7 @@ export const GameContent = styled.section`
         flex: 1;
         @media (max-width:728px) {
             flex-direction: column;
-            height: 100%;
+
         }
     `}
 `;
